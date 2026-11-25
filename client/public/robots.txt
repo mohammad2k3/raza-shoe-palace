@@ -1,7 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /admin
-Disallow: /account
-Disallow: /checkout
-
-Sitemap: https://razashoepalace.com/sitemap.xml
+Sitemap: https://raza-shoe-palace.vercel.app/sitemap.xml
