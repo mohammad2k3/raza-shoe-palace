@@ -55,14 +55,14 @@ const Navbar = () => {
   return (
     <>
       <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-luxury-gray transition-luxury">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 sm:h-20 gap-2">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 sm:h-20 gap-1">
             {/* Mobile Hamburger & Search Trigger */}
             <div className="flex items-center space-x-0.5 sm:space-x-2 md:hidden shrink-0">
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-1.5 text-luxury-black hover:text-luxury-gold focus:outline-none"
+                className="p-1 sm:p-1.5 text-luxury-black hover:text-luxury-gold focus:outline-none"
                 aria-label="Toggle navigation menu"
               >
                 {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -70,7 +70,7 @@ const Navbar = () => {
               <button
                 type="button"
                 onClick={() => setSearchOpen(!searchOpen)}
-                className="p-1.5 text-luxury-black hover:text-luxury-gold"
+                className="p-1 sm:p-1.5 text-luxury-black hover:text-luxury-gold"
                 aria-label="Search"
               >
                 <Search className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -78,9 +78,9 @@ const Navbar = () => {
             </div>
 
             {/* Brand Logo / Wordmark */}
-            <div className="flex-1 md:flex-initial text-center md:text-left min-w-0">
-              <Link to="/" onClick={closeAll} className="inline-block group max-w-full">
-                <span className="block font-serif text-base sm:text-2xl lg:text-3xl font-extrabold tracking-wider sm:tracking-luxury text-luxury-black group-hover:text-luxury-gold transition-luxury truncate">
+            <div className="flex-1 md:flex-initial text-center md:text-left">
+              <Link to="/" onClick={closeAll} className="inline-block group">
+                <span className="block font-serif text-[13px] min-[380px]:text-sm sm:text-2xl lg:text-3xl font-extrabold tracking-normal sm:tracking-luxury text-luxury-black group-hover:text-luxury-gold transition-luxury whitespace-nowrap">
                   RAZA SHOE PALACE
                 </span>
                 <span className="block text-[8px] sm:text-[9px] tracking-widest sm:tracking-ultra text-luxury-muted uppercase font-sans -mt-0.5 font-semibold">
@@ -167,7 +167,7 @@ const Navbar = () => {
             </nav>
 
             {/* Actions: Search, Wishlist, Cart, User */}
-            <div className="flex items-center space-x-1 sm:space-x-4 md:space-x-6 shrink-0">
+            <div className="flex items-center space-x-0.5 sm:space-x-4 md:space-x-6 shrink-0">
               {/* Desktop Search Toggle */}
               <button
                 type="button"
@@ -182,12 +182,12 @@ const Navbar = () => {
               <Link
                 to="/wishlist"
                 onClick={closeAll}
-                className="relative p-1.5 sm:p-2 text-luxury-black hover:text-luxury-gold transition-luxury"
+                className="relative p-1 sm:p-2 text-luxury-black hover:text-luxury-gold transition-luxury"
                 aria-label="Wishlist"
               >
                 <Heart className="w-4 h-4 sm:w-5 sm:h-5" />
                 {wishlistCount > 0 && (
-                  <span className="absolute top-0.5 right-0.5 w-3.5 h-3.5 sm:w-4 sm:h-4 bg-luxury-gold text-luxury-black text-[9px] sm:text-[10px] font-bold rounded-full flex items-center justify-center">
+                  <span className="absolute top-0 right-0 w-3.5 h-3.5 sm:w-4 sm:h-4 bg-luxury-gold text-luxury-black text-[9px] sm:text-[10px] font-bold rounded-full flex items-center justify-center">
                     {wishlistCount}
                   </span>
                 )}
@@ -197,12 +197,12 @@ const Navbar = () => {
               <Link
                 to="/cart"
                 onClick={closeAll}
-                className="relative p-1.5 sm:p-2 text-luxury-black hover:text-luxury-gold transition-luxury"
+                className="relative p-1 sm:p-2 text-luxury-black hover:text-luxury-gold transition-luxury"
                 aria-label="Shopping Cart"
               >
                 <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
                 {totalItemsCount > 0 && (
-                  <span className="absolute top-0.5 right-0.5 w-3.5 h-3.5 sm:w-4 sm:h-4 bg-luxury-black text-white text-[9px] sm:text-[10px] font-bold rounded-full flex items-center justify-center">
+                  <span className="absolute top-0 right-0 w-3.5 h-3.5 sm:w-4 sm:h-4 bg-luxury-black text-white text-[9px] sm:text-[10px] font-bold rounded-full flex items-center justify-center">
                     {totalItemsCount}
                   </span>
                 )}
@@ -215,7 +215,7 @@ const Navbar = () => {
                     <button
                       type="button"
                       onClick={() => setUserDropdownOpen(!userDropdownOpen)}
-                      className="flex items-center space-x-1 text-xs uppercase tracking-wider font-semibold text-luxury-black hover:text-luxury-gold border border-luxury-gray px-2 sm:px-3 py-1 sm:py-1.5 rounded-full"
+                      className="flex items-center space-x-1 text-xs uppercase tracking-wider font-semibold text-luxury-black hover:text-luxury-gold border border-luxury-gray px-1.5 sm:px-3 py-1 sm:py-1.5 rounded-full"
                     >
                       <User className="w-4 h-4 text-luxury-gold" />
                       <span className="hidden lg:inline max-w-[100px] truncate">{user.name.split(' ')[0]}</span>
@@ -273,7 +273,7 @@ const Navbar = () => {
                   <Link
                     to="/login"
                     onClick={closeAll}
-                    className="flex items-center space-x-1.5 p-1.5 sm:p-2 text-xs uppercase tracking-wider font-semibold text-luxury-black hover:text-luxury-gold"
+                    className="flex items-center space-x-1.5 p-1 sm:p-2 text-xs uppercase tracking-wider font-semibold text-luxury-black hover:text-luxury-gold"
                   >
                     <User className="w-4 h-4 sm:w-5 sm:h-5" />
                     <span className="hidden lg:inline">Sign In</span>
